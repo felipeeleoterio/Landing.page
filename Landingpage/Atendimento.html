@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contato</title>
+    <link rel="stylesheet" href="Css/coresnavbar.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <img src="img/senaiLogo.png" alt="Logo" class="nav-foto" />
+        <div class="nav-links">
+          <a href="index.html">Início</a>
+          <a href="Atendimento.html">Atendimento</a>
+          <a href="sobre.html">Sobre Nós</a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="login.html" title="Login">
+          <i class="fas fa-user-circle"></i>
+        </a>
+      </div>
+    </nav>
+
+    <div class="content">
+      <h1>Contato</h1>
+      <p>Entre em contato conosco através do e-mail: contato@exemplo.com</p>
+
+      <div class="form-container">
+        <form id="form-contato">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required>
+
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="assunto">Assunto:</label>
+          <input type="text" id="assunto" name="assunto" required>
+
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" required></textarea>
+
+          <button type="submit">Enviar</button>
+        </form>
+
+        <p id="mensagem-sucesso" style="display:none; color: green; margin-top: 15px;">
+          Mensagem enviada com sucesso!
+        </p>
+      </div>
+    </div>
+
+<footer>
+  <div class="footer-container">
+    <p>&copy; 2025 SENAI — Todos os direitos reservados.</p>
+    <div class="footer-links">
+      <a href="index.html">Início</a>
+      <a href="Atendimento.html">Atendimento</a>
+      <a href="Sobre.html">Sobre Nós</a>
+      <a href="#">Política de Privacidade</a>
+    </div>
+    <div class="footer-contact">
+      <p>Entre em contato:</p>
+      <p>Telefone: +55 (11) 99999-9999</a></p>
+      <p>WhatsApp: 27-999999999</a></p>
+    </div>
+  </div>
+</footer>
+
+    <script>
+      document.getElementById('form-contato').addEventListener('submit', function(event) {
+        event.preventDefault(); // impede envio real
+        document.getElementById('mensagem-sucesso').style.display = 'block'; // mostra mensagem
+        this.reset(); // limpa o formulário
+      });
+    </script>
+  </body>
+</html>
+
+

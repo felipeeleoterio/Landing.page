@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+body {
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    width: 350px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-logo {
+    width: 190px; 
+    margin-bottom: 20px; 
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 10px; 
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%; 
+    padding: 12px; 
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; 
+    box-sizing: border-box; /
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.mensagem {
+    margin-top: 15px;
+    text-align: center;
+    color: red;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    
+    <img src="img/logoSenai.png" alt="Logo SENAI" class="login-logo">
+    
+    <form id="formLogin">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" required>
+
+        <button type="submit">Entrar</button>
+
+        <div class="mensagem" id="mensagemErro"></div>
+    </form>
+</div>
+
+<script>
+    const emailCorreto = "usuario@exemplo.com";
+    const senhaCorreta = "123456";
+
+    document.getElementById('formLogin').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        const email = document.getElementById('email').value;
+        const senha = document.getElementById('senha').value;
+        const mensagemErro = document.getElementById('mensagemErro');
+
+        if (email === emailCorreto && senha === senhaCorreta) {
+            
+            window.location.href = "index.html";
+        } else {
+            mensagemErro.textContent = "Email ou senha inválidos.";
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
